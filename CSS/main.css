@@ -1,0 +1,42 @@
+#test{
+background-color: red;
+
+}
+
+.row{
+  width: 100%;
+
+
+}
+
+.box {
+    border: 2px solid #ffa94d;
+    border-radius: 2px;
+    background-color: #ffd8a8;
+    padding: 1em;
+    color: #d9480f;
+    width: 100px;
+    margin: 5px;
+}
+
+.Xbox {
+
+  content: "X";
+  color: black;
+  visibility: visible;
+
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 400px;
+
+  /*display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 40px 40px;
+  grid-row-end: auto;*/
+}
+
+
+
+

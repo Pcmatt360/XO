@@ -3,42 +3,76 @@ var playerTwo = '';
 var totalScore;
 var playerTurn = 'X';
 var boxId;
+var gameOver = false;
+var winner = null;
 var gameBoard = [
   null,null,null,
   null,null,null,
   null,null,null,
 ]
 
+function isWinner(){
+  if (gameBoard[0]) {
+    if (gameBoard[0] == gameBoard[1] && gameBoard[0] == gameBoard[2]){
+      return playerTurn;
+    }
+    else if (gameBoard[0] == gameBoard[3] && gameBoard[0] == gameBoard[6]){
+      return playerTurn;
+    }
+    else if (gameBoard[0] == gameBoard[4] && gameBoard[0] == gameBoard[8]){
+      return playerTurn;
+    }
+  }
+  if (gameBoard[4]) {
+    if (gameBoard[3] == gameBoard[4] && gameBoard[3] == gameBoard[5]){
+      return playerTurn;
+    }
+    else if (gameBoard[1] == gameBoard[4] && gameBoard[1] == gameBoard[7]){
+      return playerTurn;
+    }
+  }
+  if (gameBoard[2]) {
+    if (gameBoard[2] == gameBoard[5] && gameBoard[2] == gameBoard[8]){
+      return playerTurn;
+    }
+    else if (gameBoard[2] == gameBoard[4] && gameBoard[2] == gameBoard[6]){
+      return playerTurn;
+    }
+  }
+  if (gameBoard[6] == gameBoard[7] && gameBoard[6] == gameBoard[8] && gameBoard[6]){
+    return playerTurn;
+  }
+  return null;
+}
+
 function isGameOver(){
- if (gameBoard[0] == gameBoard[1] && gameBoard[2]){
-  alert('Player ' + playerTurn +' '+ 'Wins!')
-  console.log('you win')
+  if (winner) {
+    alert('The winner is ' + playerTurn);
   }
-  if (gameBoard[3] == gameBoard[4] && gameBoard[5]){
-  console.log('you win')
-  }
-  if (gameBoard[6] == gameBoard[7] && gameBoard[8]){
-  console.log('you win')
-  }
-  if (gameBoard[0] == gameBoard[3] && gameBoard[6]){
-  console.log('you win')
-  }
-  if (gameBoard[2] == gameBoard[4] && gameBoard[7]){
-  console.log('you win')
-  }
-  if (gameBoard[2] == gameBoard[4] && gameBoard[7]){
-  console.log('you win')
-  }
-  if (gameBoard[0] == gameBoard[4] && gameBoard[8]){
-  console.log('you win')
-  //}if ((gameBoard[2] && gameBoard[4] && gameBoard[6]) =='X'){
-  //  alert(playerTurn + 'Wins')
-  //console.log('you win')
+  else {
+    gameOver = true;
+    gameBoard.forEach(function(value) {
+      if (!value){
+        gameOver = false;
+      }
+    });
+    if (gameOver) {
+      console.log('Winter has come :-(');
+    }
+    else {
+      console.log('No one wins the game of thrones YET!');
+    }
   }
 }
 
-
-
+function swapPlayerTurn(){
+  if (playerTurn == 'X') {
+    playerTurn = 'O';
+  } 
+  else {
+    playerTurn = 'X';
+  }
+}
 
 $('.box').click(function() {
   console.log('box click');
@@ -48,14 +82,12 @@ $('.box').click(function() {
   console.log(boxId);
   gameBoard[boxId] = playerTurn;
   console.log(gameBoard);
-  if (playerTurn == 'X') {
-    playerTurn = 'O';
-  } else {
-    playerTurn = 'X';
-  }
-isGameOver();
+  winner = isWinner();
 
-
+  isGameOver();
+  swapPlayerTurn();
+  
 
 } )
+
 

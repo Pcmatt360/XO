@@ -11,6 +11,10 @@ var gameBoard = [
   null,null,null,
 ]
 
+$('#start').click(function() {
+  $(this).text( "Next Step..." );
+})
+
 function isWinner(){
   if (gameBoard[0]) {
     if (gameBoard[0] == gameBoard[1] && gameBoard[0] == gameBoard[2]){
@@ -68,11 +72,15 @@ function isGameOver(){
 function swapPlayerTurn(){
   if (playerTurn == 'X') {
     playerTurn = 'O';
-  } 
+  }
   else {
     playerTurn = 'X';
   }
 }
+
+
+
+
 
 $('.box').click(function() {
   console.log('box click');
@@ -86,7 +94,7 @@ $('.box').click(function() {
 
   isGameOver();
   swapPlayerTurn();
-  
+
 
 } )
 

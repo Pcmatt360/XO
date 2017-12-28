@@ -78,18 +78,30 @@ function swapPlayerTurn(){
   }
 }
 
+changeImage= (currentBox) =>{
+  if(playerTurn == 'X'){
+    currentBox.addClass('Xbox');
+    // currentBox.html('<img src = "Assets/de.png" />');
+  }
+  else if (playerTurn == 'O'){
+    currentBox.addClass('Obox');
+  }
+  
+};
+
 
 
 
 
 $('.box').click(function() {
   console.log('box click');
-  $(this).addClass('Xbox');
-  $(this).text(playerTurn);
+  // $(this).addClass('btn btn-primary');
+  //$(this).text(playerTurn);
   boxId = $(this).attr('id');
   console.log(boxId);
   gameBoard[boxId] = playerTurn;
   console.log(gameBoard);
+  changeImage($(this));
   winner = isWinner();
 
   isGameOver();

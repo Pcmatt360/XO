@@ -51,7 +51,9 @@ function isWinner(){
 
 function isGameOver(){
   if (winner) {
-    alert('The winner is ' + playerTurn);
+    $('.modal-title').text(winner + ' Has Won');
+    $('#mContent').addClass(winner);
+    $('#myModal').modal('show');
   }
   else {
     gameOver = true;
@@ -62,6 +64,9 @@ function isGameOver(){
     });
     if (gameOver) {
       console.log('Winter has come :-(');
+      $('.modal-title').text('Winter Has Come');
+      $('#mContent').addClass('Winter');
+      $('#myModal').modal('show');
     }
     else {
       console.log('No one wins the game of thrones YET!');
@@ -88,8 +93,6 @@ changeImage= (currentBox) =>{
   }
   
 };
-
-
 
 
 

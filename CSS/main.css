@@ -15,7 +15,21 @@ html, body {
   background-repeat: no-repeat;
 }
 
+#playerOne{
+  color: rgb(246, 209, 27);
+  /*text-align: left;*/
+  float: left;
+}
 
+#playerTwo{
+  color: #E33434;
+  /*text-align: right;*/
+  float: right;
+}
+
+#playerOne, #playerTwo{
+  position: relative;
+}
 
 .row{
   padding-left: 50px;

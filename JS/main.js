@@ -94,7 +94,21 @@ changeImage= (currentBox) =>{
   
 };
 
+getNames = () => {
+  playerOne = prompt("Player One please enter your name: ");
+  playerOne = playerOne + ' Lannister';
+  console.log(playerOne);
+  $('#playerOne').text(playerOne);
+  playerTwo = prompt("Player Two please enter your name: ");
+  playerTwo = playerTwo + ' Targaryen';
+  console.log(playerTwo);
+  $('#playerTwo').text(playerTwo);
 
+};
+
+$('#start').click(function(){
+  getNames();
+})
 
 $('.box').click(function() {
   console.log('box click');

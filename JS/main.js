@@ -94,7 +94,15 @@ changeImage= (currentBox) =>{
   
 };
 
-getNames = () => {
+const resetGame = () => {
+  gameBoard.forEach(function(element,index) {
+    gameBoard[index] = null;
+  });
+  $('.box').removeClass("Xbox Obox");
+  console.log(gameBoard);
+} 
+
+const getNames = () => {
   playerOne = prompt("Player One please enter your name: ");
   playerOne = playerOne + ' Lannister';
   console.log(playerOne);
@@ -110,8 +118,13 @@ $('#start').click(function(){
   getNames();
 })
 
+$('#reset').click(function(){
+  resetGame();
+})
+
 $('.box').click(function() {
   console.log('box click');
+  
   // $(this).addClass('btn btn-primary');
   //$(this).text(playerTurn);
   boxId = $(this).attr('id');
@@ -123,7 +136,7 @@ $('.box').click(function() {
 
   isGameOver();
   swapPlayerTurn();
-
+  
 
 } )
 

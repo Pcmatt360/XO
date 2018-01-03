@@ -10,6 +10,7 @@
 
 
   <title>XO Game</title>
+
 </head>
 <body>
 
@@ -30,7 +31,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Game Over</h5>
+        <h5 class="modal-title" class="text-white bg-dark">Game Over</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -50,15 +51,17 @@
 <!-- End of Modal -->
   
 
-  <nav class="navbar">
+  <nav class="navbar p-3 mb-2 bg-dark text-white">
     <a class="navbar-brand">XO Game!</a>
-    <audio controls loop src="Assets/gotm.mp3" type="audio/mp3" autoplay> </audio>
+    <audio controls loop src="Assets/gotm.mp3" type="audio/mp3"> </audio>
     <div class="btn-group">
 
       <div class="btn btn-primary" id="start">Start Game </div>
       <div class="btn btn-danger" id="reset"> Reset </div>
     </div>
   </nav>
+
+  <!-- End of Nav -->
   <div id="background">
     <div id="playerOne"></div>
     <div id="playerTwo"></div>

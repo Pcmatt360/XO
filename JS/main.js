@@ -83,7 +83,7 @@ function swapPlayerTurn(){
   }
 }
 
-changeImage= (currentBox) =>{
+changeImage = (currentBox) =>{
   if(playerTurn == 'X'){
     currentBox.addClass('Xbox');
     // currentBox.html('<img src = "Assets/de.png" />');

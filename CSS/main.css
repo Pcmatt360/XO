@@ -2,10 +2,13 @@ html, body {
    height: 100%;
    margin: 0;
    padding: 0;
-   
-
+ 
 }
 
+@font-face{
+  font-family: "got";
+  src: url("../Assets/Game of Thrones.ttf");
+}
 
 #background{
   width: 100%;
@@ -82,7 +85,9 @@ html, body {
 }
 
 
-
+.font{
+  font-family: got;
+}
 
 .wrapper {
   margin: 300px auto 0px auto;

@@ -122,10 +122,14 @@ const getNames = () => {
 
 
 $('.wrapper').hide(true);
+$('#playerOneTitle').hide(true);
+$('#playerTwoTitle').hide(true);
 
 $('#start').click(function(){
   $('.wrapper').show(true);
   getNames();
+  $('#playerOneTitle').show(true);
+  $('#playerTwoTitle').show(true);
 })
 
 $('#reset').click(function(){

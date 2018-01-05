@@ -21,20 +21,32 @@ html, body {
   background-repeat: no-repeat;
 }
 
-#playerOne{
+#playerOne, #playerOneTitle{
   color: rgb(246, 209, 27);
   /*text-align: left;*/
   float: left;
 }
+#playerOneTitle{
+  margin-right: 10px;
+}
 
-#playerTwo{
+#playerTwoTitle{
+  margin-right: 10px;
+}
+
+#playerTwo, #playerTwoTitle{
   color: #E33434;
   /*text-align: right;*/
   float: right;
 }
 
-#playerOne, #playerTwo{
+#playerOne, #playerTwo, {
+  position: absolute;
+}
+
+#playerOneTitle, #playerTwoTitle{
   position: relative;
+
 }
 
 .row{

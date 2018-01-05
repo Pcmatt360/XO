@@ -100,6 +100,7 @@ const resetGame = () => {
   });
   $('.box').removeClass("Xbox Obox");
   console.log(gameBoard);
+  playerTurn = 'X';
 } 
 
 const getNames = () => {

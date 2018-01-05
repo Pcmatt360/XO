@@ -11,9 +11,9 @@ var gameBoard = [
   null,null,null,
 ]
 
-$('#start').click(function() {
-  $(this).text( "Next Step..." );
-})
+// $('#start').click(function() {
+//   $(this).text( "Next Step..." );
+// })
 
 function isWinner(){
   if (gameBoard[0]) {
@@ -104,17 +104,26 @@ const resetGame = () => {
 
 const getNames = () => {
   playerOne = prompt("Player One please enter your name: ");
-  playerOne = playerOne + ' Lannister';
+  playerOne = playerOne +' '+'Lannister';
   console.log(playerOne);
   $('#playerOne').text(playerOne);
   playerTwo = prompt("Player Two please enter your name: ");
-  playerTwo = playerTwo + ' Targaryen';
+  playerTwo = playerTwo +' '+'Targaryen';
   console.log(playerTwo);
   $('#playerTwo').text(playerTwo);
-
+  if(playerOne === ''){
+    playerOne = '';
+    }
+    else if(playerTwo === ''){
+      playerTwo = '';
+    }
 };
 
+
+$('.wrapper').hide(true);
+
 $('#start').click(function(){
+  $('.wrapper').show(true);
   getNames();
 })
 

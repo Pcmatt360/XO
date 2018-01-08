@@ -75,7 +75,7 @@ function isGameOver(){
 }
 
 function swapPlayerTurn(){
-  if (playerTurn == 'X') {
+  if (playerTurn === 'X') {
     playerTurn = 'O';
   }
   else {
@@ -95,35 +95,29 @@ changeImage = (currentBox) =>{
 };
 
 const resetGame = () => {
+  console.log(playerTurn);
   gameBoard.forEach(function(element,index) {
     gameBoard[index] = null;
   });
   $('.box').removeClass("Xbox Obox");
   console.log(gameBoard);
-  playerTurn = 'X';
 } 
 
 const getNames = () => {
   playerOne = prompt("Player One please enter your name: ");
-  playerOne = playerOne +' '+'Lannister';
-  console.log(playerOne);
-  $('#playerOne').text(playerOne);
   playerTwo = prompt("Player Two please enter your name: ");
-  playerTwo = playerTwo +' '+'Targaryen';
-  console.log(playerTwo);
-  $('#playerTwo').text(playerTwo);
-  if(playerOne === ''){
+  if(playerOne === null) {
     playerOne = '';
-    }
-    else if(playerTwo === ''){
-      playerTwo = '';
-    }
+  }
+  if(playerTwo === null){
+    playerTwo = '';
+  }
+  playerOne = playerOne + '  Lannister';
+  playerTwo = playerTwo + '  Targaryen';
+  $('#playerOne').text(playerOne);
+  $('#playerTwo').text(playerTwo);
 };
 
-
-$('.wrapper').hide(true);
-$('#playerOneTitle').hide(true);
-$('#playerTwoTitle').hide(true);
 
 $('#start').click(function(){
   $('.wrapper').show(true);
@@ -138,19 +132,15 @@ $('#reset').click(function(){
 
 $('.box').click(function() {
   console.log('box click');
-  
-  // $(this).addClass('btn btn-primary');
-  //$(this).text(playerTurn);
   boxId = $(this).attr('id');
-  console.log(boxId);
-  gameBoard[boxId] = playerTurn;
-  console.log(gameBoard);
-  changeImage($(this));
-  winner = isWinner();
+  if (!gameBoard[boxId]){
+    gameBoard[boxId] = playerTurn;
+    changeImage($(this));
+    winner = isWinner();
+    isGameOver();
+    swapPlayerTurn();
+  }
 
-  isGameOver();
-  swapPlayerTurn();
-  
 
 } )
 

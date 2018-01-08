@@ -21,33 +21,20 @@ html, body {
   background-repeat: no-repeat;
 }
 
-#playerOne, #playerOneTitle{
-  color: rgb(246, 209, 27);
-  /*text-align: left;*/
-  float: left;
-}
+
 #playerOneTitle{
-  margin-right: 10px;
+  float: left;
+  color: rgb(246, 209, 27);
+  display: none;
+
 }
 
 #playerTwoTitle{
-  margin-right: 10px;
-}
-
-#playerTwo, #playerTwoTitle{
+  display: none;
   color: #E33434;
-  /*text-align: right;*/
   float: right;
 }
 
-#playerOne, #playerTwo, {
-  position: absolute;
-}
-
-#playerOneTitle, #playerTwoTitle{
-  position: relative;
-
-}
 
 .row{
   padding-left: 50px;
@@ -104,6 +91,7 @@ html, body {
 .wrapper {
   margin: 300px auto 0px auto;
   width: 400px;
+  display: none;
 }
 
 
